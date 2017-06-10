@@ -7,8 +7,6 @@ import json
 import apiConstant
 import apiException
 
-# some ideas are from https://github.com/dingyuliang/python-taobao/tree/master/taobao
-
 class ApiClient(object):
     """
     Base API Client class for executing API
@@ -39,7 +37,7 @@ class ApiClient(object):
 
     def _sign(self, params):
         # Step 1: order parameters by name alphabetically
-        keys = self._sortedByCSharp(params.keys())
+        keys = self._sortedIgnoreCase(params.keys())
 
         # Step 2: contact all parameters name and parameter value 
         query = self.app_secret
@@ -73,7 +71,7 @@ class ApiClient(object):
     def __request(self, method_name, *args, **kwargs):
         return self.execute(method_name, **kwargs)
 
-    def _sortedByCSharp(self, keys):
+    def _sortedIgnoreCase(self, keys):
         # C# SortedDictionary is different from Python sorted.
         # assume we only have parameters with starting  with _ and letter.
         dictOfKeys = {}
