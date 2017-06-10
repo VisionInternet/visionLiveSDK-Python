@@ -1,5 +1,7 @@
 # visionLiveSDK-Python
 
+The Python SDK project for visionLive API
+
 API Explorer: http://api.visioninternet.com/
 
 API Document: http://api.visioninternet.com/Document
