@@ -6,6 +6,16 @@ API Explorer: http://api.visioninternet.com/
 
 API Document: http://api.visioninternet.com/Document
 
+Install:
+```
+# pip install -e git+https://github.com/VisionInternet/visionLiveSDK-Python.git#egg=python-visionLiveAPI
+```
+
+Uninstall
+```
+# pip uninstall python-visionLiveAPI
+```
+
 Python Example
 ```
 from visionLiveAPI import apiClient
