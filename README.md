@@ -8,18 +8,18 @@ API Document: http://api.visioninternet.com/Document
 
 Install:
 ```
-# pip install -e git+https://github.com/VisionInternet/visionLiveSDK-Python.git#egg=python-visionLiveAPI
+# pip install -e git+https://github.com/VisionInternet/visionLiveSDK-Python.git#egg=visionLiveSDK
 ```
 
 Uninstall
 ```
-# pip uninstall python-visionLiveAPI
+# pip uninstall visionLiveSDK
 ```
 
 Python Example
 ```
-from visionLiveAPI import apiClient
-from visionLiveAPI.apiClient import ApiClient
+from visionLiveSDK import apiClient
+from visionLiveSDK.apiClient import ApiClient
 
 appSecret = '{Your App Secret}'
 appKey='{Your App Key}'

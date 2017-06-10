@@ -14,12 +14,12 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 def get_version():
-    init = read(os.path.join('visionLiveAPI', '__init__.py'))
+    init = read(os.path.join('visionLiveSDK', '__init__.py'))
     return re.search("__version__ = '([0-9.]*)'", init).group(1)
 
-setup(name='python-visionLiveAPI',
+setup(name='visionLiveSDK',
     version=get_version(),
-    description='Library for visionLive api ',
+    description='SDK for visionLive API ',
     long_description=read('README.md'),
     author='Vision Internet',
     author_email='yding@visioninternet.com',

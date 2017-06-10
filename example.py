@@ -1,5 +1,5 @@
-from visionLiveAPI import apiClient
-from visionLiveAPI.apiClient import ApiClient
+from visionLiveSDK import apiClient
+from visionLiveSDK.apiClient import ApiClient
 
 appSecret = '{Your App Secret}'
 appKey='{Your App Key}'
