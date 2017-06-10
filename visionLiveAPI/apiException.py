@@ -1,5 +1,3 @@
-import apiErrorCode
-
 class ApiException():
 
     def __init__(self, errorCode, errorMsg):
