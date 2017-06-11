@@ -22,14 +22,6 @@ class ApiClient(object):
         self.app_key = app_key
         self.app_secret = app_secret
 
-    def decode_params(self, api_parameters):
-        params = {}
-        param_string = base64.b64decode(api_parameters)
-        for p in param_string.split('&') :
-            key, value = p.split('=')
-            params[key] = value
-        return params
-
     def _get_timestamp(self):
         utcTime = datetime.datetime.utcnow()
         strtime = utcTime.strftime(apiConstant.DATE_TIME_FORMAT)
@@ -65,15 +57,13 @@ class ApiClient(object):
             error_msg = rsp['ErrorMessage']
             raise apiException.ApiException(error_code,error_msg)
         else:
-            #rsp = rsp[method_name.replace('.','_')[7:] + '_response']
             return rsp
 
     def __request(self, method_name, *args, **kwargs):
         return self.execute(method_name, **kwargs)
 
     def _sortedIgnoreCase(self, keys):
-        # C# SortedDictionary is different from Python sorted.
-        # assume we only have parameters with starting  with _ and letter.
+        # ignore case as server side is using C#, which is case insensitive
         dictOfKeys = {}
         for key in keys:
             dictOfKeys[key.lower()] = key
